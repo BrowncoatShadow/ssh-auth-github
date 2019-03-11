@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# https://github.com/BrowncoatShadow/ssh-auth-github
+
+ID_FILE="${1}/.ssh/github_user"
+
+if [[ -f "${ID_FILE}" ]]; then
+  while IFS= read -r user; do
+    curl -sf "https://github.com/${user}.keys"
+  done < "${ID_FILE}"
+fi
