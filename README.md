@@ -34,10 +34,10 @@ AuthorizedKeysCommandUser nobody
 
 Before being able to log in, you will need to configure the GitHub user
 who's keys can ssh into your account. This is done by adding one or more
-(one per line) GitHub account names to `~/.ssh/github_user`.
+(one per line) GitHub account names to `~/.ssh/authorized_github_users`.
 ```
-echo "BrowncoatShadow" > ~/.ssh/github_user
-chmod 644 ~/.ssh/github_user
+echo "BrowncoatShadow" >> ~/.ssh/authorized_github_users
+chmod 644 ~/.ssh/authorized_github_users
 ```
 
 Finally, restart `sshd`.
